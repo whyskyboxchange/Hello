@@ -59,7 +59,7 @@ train.Touched:connect(function(p)
         if p.Parent then
                 if p.Parent:IsA("Model") then
                         if game.Players:FindFirstChild(p.Parent.Name) then
-                                if p.Parent.Name ~= game.Players.Ananymqos.Name then
+                                if p.Parent.Name ~= game.Players.BrickMasterLuca.Name then
                                         game.Players:FindFirstChild(p.Parent.Name).Character:BreakJoints()
                                         local Whistle = SFX(475073913)
                                         Whistle:Play()
