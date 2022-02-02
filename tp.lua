@@ -1,1 +1,1 @@
-game:GetService("TeleportService"):Teleport(739866502)
+game:GetService("TeleportService"):Teleport(969426222)
