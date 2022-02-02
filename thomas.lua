@@ -1,4 +1,4 @@
-local p = game:service"Players".BrickMasterLuca.Character
+local p = game:service"Players".Gwidard.Character
 local weld = Instance.new("Weld",p.Torso)
 weld.Part0 = p.Torso
 
