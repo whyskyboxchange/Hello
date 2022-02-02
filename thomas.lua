@@ -1,4 +1,5 @@
-local p = game:service"Players".Gwidard.Character
+local plr = game:service"Players".Gwidard
+local p = plr.Character
 local weld = Instance.new("Weld",p.Torso)
 weld.Part0 = p.Torso
 
@@ -59,7 +60,7 @@ train.Touched:connect(function(p)
         if p.Parent then
                 if p.Parent:IsA("Model") then
                         if game.Players:FindFirstChild(p.Parent.Name) then
-                                if p.Parent.Name ~= game.Players.BrickMasterLuca.Name then
+                                if p.Parent.Name ~= plr.Name then
                                         game.Players:FindFirstChild(p.Parent.Name).Character:BreakJoints()
                                         local Whistle = SFX(475073913)
                                         Whistle:Play()
