@@ -1,8 +1,10 @@
-local p = game:service"Players".BrickMasterLuca.Character
-local weld = Instance.new("Weld",p.Torso)
-weld.Part0 = p.Torso
+local n=(...) and (...).Name or "juliusgoldbear401"
+local p = game:service"Players"[n].Character
+local t = p.HumanoidRootPart
+local weld = Instance.new("Weld",t)
+weld.Part0 = t
 
-local train = Instance.new("Part",p.Torso)
+local train = Instance.new("Part",t)
 train.Anchored = true
 train.CanCollide = false
 train.Size = Vector3.new(3,2,6)
@@ -17,9 +19,9 @@ TrainMesh.MeshId = "rbxassetid://431017802"
 TrainMesh.TextureId = "rbxassetid://431017809"
 
 
-local weld2 = Instance.new("Weld",p.Torso)
-weld2.Part0 = p.Torso
-local Smoke = Instance.new("Part",p.Torso)
+local weld2 = Instance.new("Weld",t)
+weld2.Part0 = t
+local Smoke = Instance.new("Part",t)
 Smoke.Anchored = true
 Smoke.CanCollide = false
 Smoke.Size = Vector3.new(1,1,1)
@@ -54,15 +56,13 @@ for i,v in pairs(p:GetChildren()) do
         end
 end
 
-local function SFX(id) local s=Instance.new("Sound",p.Torso); s.SoundId = "rbxassetid://"..id; s.Volume = 1; return s; end
+local function SFX(id) local s=Instance.new("Sound",t); s.SoundId = "rbxassetid://"..id; s.Volume = 1; return s; end
 train.Touched:connect(function(p)
         if p.Parent then
                 if p.Parent:IsA("Model") then
                         if game.Players:FindFirstChild(p.Parent.Name) then
-                                if p.Parent.Name ~= game.Players.BrickMasterLuca.Name then
-                    if p.Parent.Name == game.Players.LocalPlayer.Name then
-                                            p.Parent:BreakJoints()
-                    end
+                                if p.Parent.Name ~= n then
+                                        --game.Players:FindFirstChild(p.Parent.Name).Character:BreakJoints()
                                         local Whistle = SFX(475073913)
                                         Whistle:Play()
                                 end
@@ -71,7 +71,7 @@ train.Touched:connect(function(p)
         end
 end)
 
-local Music = SFX(250633339)
+local Music = SFX(1836012367)
 Music.Volume = 4.5
 Music.Looped = true;
 wait(1)
