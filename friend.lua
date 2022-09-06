@@ -1,3 +1,1 @@
-pcall(function()
-   game:GetService("Players").LocalPlayer:RequestFriendship(...)
-end)
+game:GetService("Players").LocalPlayer:RequestFriendship(...)
